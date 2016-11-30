@@ -35,6 +35,11 @@
     return self;
 }
 
+- (NSArray *)possibleTicketNumbers
+{
+    return allowableIntegers;
+}
+
 - (NSString *)createTicket
 {
     winningNumbers = @"";
@@ -46,5 +51,11 @@
     }
     return winningNumbers;
 }
+
+- (NSString *)ticketText
+{
+    return [NSString stringWithFormat:@"%@", winningNumbers];
+}
+
 @end
 

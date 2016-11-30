@@ -13,6 +13,7 @@
 
 @property (nonatomic) NSMutableArray *quickpicks;
 
+
 @end
 
 @implementation JackpotTableViewController
@@ -20,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.quickpicks = [[NSMutableArray alloc] init];
+     self.quickpicks = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,19 +46,24 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuickpicksCell" forIndexPath:indexPath];
     
     QuickPick *aQuickPick = self.quickpicks[indexPath.row];
-    cell.textLabel.text = [aQuickPick createTicket];
+    cell.textLabel.text = [aQuickPick ticketText];
+    cell.detailTextLabel.textColor = [UIColor greenColor];
+    cell.detailTextLabel.text = @"✅ $10";
     
     return cell;
 }
+
 
 #pragma mark - Action handler
 
 - (IBAction)createTicket:(id)sender
 {
-    QuickPick *aQuickpick = [[QuickPick alloc] initWithAllowableIntegers];
-    [self.quickpicks addObject:aQuickpick];
+    //QuickPick *aQuickpick = [[QuickPick alloc] initWithAllowableIntegers];
+    //[self.quickpicks addObject:aQuickpick];
+    [self.quickpicks addObject:[[QuickPick alloc] initWithAllowableIntegers]];
+    [[self.quickpicks lastObject] createTicket];
     [self.tableView reloadData];
-    aQuickpick = nil;
+
 }
 
 @end

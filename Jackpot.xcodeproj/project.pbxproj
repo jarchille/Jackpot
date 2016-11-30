@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		765032431DEE8F3B0047CF71 /* NumberPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765032421DEE8F3B0047CF71 /* NumberPickerViewController.m */; };
 		76B2DEC71DECBE1700B812F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2DEC61DECBE1700B812F7 /* main.m */; };
 		76B2DECA1DECBE1700B812F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2DEC91DECBE1700B812F7 /* AppDelegate.m */; };
 		76B2DED01DECBE1700B812F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B2DECE1DECBE1700B812F7 /* Main.storyboard */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		765032411DEE8F3B0047CF71 /* NumberPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberPickerViewController.h; sourceTree = "<group>"; };
+		765032421DEE8F3B0047CF71 /* NumberPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberPickerViewController.m; sourceTree = "<group>"; };
 		76B2DEC21DECBE1700B812F7 /* Jackpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jackpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76B2DEC61DECBE1700B812F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		76B2DEC81DECBE1700B812F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +69,8 @@
 				76B2DEDC1DECBE6B00B812F7 /* JackpotTableViewController.h */,
 				76B2DEDD1DECBE6B00B812F7 /* JackpotTableViewController.m */,
 				76B2DECE1DECBE1700B812F7 /* Main.storyboard */,
+				765032411DEE8F3B0047CF71 /* NumberPickerViewController.h */,
+				765032421DEE8F3B0047CF71 /* NumberPickerViewController.m */,
 				76B2DEDF1DECC44C00B812F7 /* QuickPick.h */,
 				76B2DEE01DECC44C00B812F7 /* QuickPick.m */,
 				76B2DED11DECBE1700B812F7 /* Assets.xcassets */,
@@ -156,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76B2DEDE1DECBE6B00B812F7 /* JackpotTableViewController.m in Sources */,
+				765032431DEE8F3B0047CF71 /* NumberPickerViewController.m in Sources */,
 				76B2DECA1DECBE1700B812F7 /* AppDelegate.m in Sources */,
 				76B2DEE11DECC44C00B812F7 /* QuickPick.m in Sources */,
 				76B2DEC71DECBE1700B812F7 /* main.m in Sources */,
@@ -313,6 +319,7 @@
 				76B2DEDB1DECBE1700B812F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

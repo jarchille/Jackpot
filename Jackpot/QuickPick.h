@@ -13,5 +13,7 @@
 
 - (instancetype)initWithAllowableIntegers;
 - (NSString *)createTicket;
+- (NSString *)ticketText;
+- (NSArray *)possibleTicketNumbers;
 
 @end

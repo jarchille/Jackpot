@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuickpicksCell" id="NjS-xH-zky">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuickpicksCell" id="o3H-wO-rFN">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NjS-xH-zky" id="wDU-bg-57t">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o3H-wO-rFN" id="EbJ-sO-33A">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -33,6 +34,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Get rich quick" id="AjB-Jy-gs8">
+                        <barButtonItem key="leftBarButtonItem" title="Enter Winning #" id="Zse-dj-Foa">
+                            <connections>
+                                <segue destination="1n4-cE-ILQ" kind="presentation" id="x9c-pR-Mby"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BXV-MO-ici">
                             <connections>
                                 <action selector="createTicket:" destination="hD1-fg-Qu4" id="qeV-JY-5B2"/>
@@ -42,7 +48,65 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBp-Sj-j8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="716"/>
+            <point key="canvasLocation" x="1753" y="716"/>
+        </scene>
+        <!--NumberPicker-->
+        <scene sceneID="sQp-Hi-jIs">
+            <objects>
+                <viewController title="NumberPicker" id="1n4-cE-ILQ" customClass="NumberPickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bkX-tU-Zkw"/>
+                        <viewControllerLayoutGuide type="bottom" id="58O-BZ-gLw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LVU-dC-3La">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFB-6k-kBY">
+                                <rect key="frame" x="0.0" y="192" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1n4-cE-ILQ" id="FpH-hm-cV1"/>
+                                    <outlet property="delegate" destination="1n4-cE-ILQ" id="z4b-6P-aXB"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBA-MI-Yxi">
+                                <rect key="frame" x="109" y="526" width="157" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Check Quickpicks">
+                                    <color key="titleColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="willCheckQuickpicks:" destination="1n4-cE-ILQ" eventType="touchUpInside" id="cbn-9s-LR9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the winning numbers!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6F-eL-xVk">
+                                <rect key="frame" x="16" y="48" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XFB-6k-kBY" firstAttribute="leading" secondItem="LVU-dC-3La" secondAttribute="leading" id="9Yy-lR-daD"/>
+                            <constraint firstItem="XFB-6k-kBY" firstAttribute="top" secondItem="J6F-eL-xVk" secondAttribute="bottom" constant="120" id="DTm-sU-dDr"/>
+                            <constraint firstAttribute="trailing" secondItem="XFB-6k-kBY" secondAttribute="trailing" id="Dzh-Lu-KX2"/>
+                            <constraint firstItem="DBA-MI-Yxi" firstAttribute="top" secondItem="XFB-6k-kBY" secondAttribute="bottom" constant="118" id="Idu-GV-vtr"/>
+                            <constraint firstItem="J6F-eL-xVk" firstAttribute="leading" secondItem="LVU-dC-3La" secondAttribute="leadingMargin" id="KsV-IR-g9y"/>
+                            <constraint firstItem="J6F-eL-xVk" firstAttribute="trailing" secondItem="LVU-dC-3La" secondAttribute="trailingMargin" id="OY0-NX-yNE"/>
+                            <constraint firstItem="DBA-MI-Yxi" firstAttribute="leading" secondItem="LVU-dC-3La" secondAttribute="leadingMargin" constant="93" id="VXx-ph-lnv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DBA-MI-Yxi" secondAttribute="trailing" constant="93" id="WcI-2v-HuS"/>
+                            <constraint firstItem="58O-BZ-gLw" firstAttribute="top" secondItem="DBA-MI-Yxi" secondAttribute="bottom" constant="114" id="YmV-an-HIV"/>
+                            <constraint firstItem="J6F-eL-xVk" firstAttribute="top" secondItem="bkX-tU-Zkw" secondAttribute="bottom" constant="28" id="cNp-EW-31J"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chooseWinningNumbersPickerView" destination="XFB-6k-kBY" id="4xv-cI-BlD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tHF-Hc-gX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2485.5999999999999" y="730.88455772113946"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HGC-yn-kDL">
